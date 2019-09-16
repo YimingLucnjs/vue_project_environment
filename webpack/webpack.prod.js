@@ -1,11 +1,7 @@
-
 /*
- * @Company: JiangSu LangChuang
- * @Author: Lu YiMing
- * @Date: 2019-09-07 15:13:29
- * @LastAuthor: Lu YiMing
- * @lastTime: 2019-09-14 18:42:05
- * @FileUse: 文本文件用于
+ * @creater: Lu YiMing
+ * @Date: 2019-09-15 19:26:28
+ * @use: use
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -26,47 +22,22 @@ const Config = {
             chunksSortMode: 'dependency',
             minify: {
                 removeComments: true,
-            }
+            },
+            favicon: './favicon.ico'
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({}),
     ],
     module: {
-        rules: [
-            {
-                test: /\.(css|scss)$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: {
-                                mode: 'local',
-                                localIdentName: 'env_[local]_[hash:base64:5]',
-                                context: path.resolve(__dirname, 'src'),
-                                hashPrefix: 'my-custom-hash',
-                            },
-                        }
-                    },
-                    "sass-loader",
-                    {
-                        loader: 'sass-resources-loader',
-                        options: {
-                            resources: [
-                                path.resolve(__dirname, '../src/scss/mixin.scss'),
-                                path.resolve(__dirname, '../src/scss/variable.scss'),
-                            ]
-                        }
-                    },
-                    'postcss-loader',
-                ]
-            },
-            {
-                test: /scss(\/|\\).*\.scss$/,
-                use: [{
-                    loader: "style-loader",
+        rules: [{
+            test: /\.(css|scss)$/,
+            exclude: [
+                /node_modules/,
+                path.resolve(__dirname, '../src/config/init/style'),
+            ],
+            use: [
+                {
+                    loader: MiniCssExtractPlugin.loader
                 },
                 {
                     loader: 'css-loader',
@@ -79,21 +50,46 @@ const Config = {
                         },
                     }
                 },
-                    "sass-loader",
+                "sass-loader",
                 {
                     loader: 'sass-resources-loader',
                     options: {
-                        // Provide path to the file with resources
-                        // Or array of paths
                         resources: [
-                            '../src/scss/mixin.scss',
-                            '../src/scss/variables.scss',
-                        ],
-                    },
+                            path.resolve(__dirname, '../src/scss/mixin.scss'),
+                            path.resolve(__dirname, '../src/scss/variable.scss'),
+                        ]
+                    }
                 },
-                    'postcss-loader',
-                ]
-            }
+                'postcss-loader',
+            ]
+        },
+        {
+            test: /\.(css|scss)$/,
+            exclude: [
+                path.resolve(__dirname, '../src'),
+            ],
+            use: [
+                {
+                    loader: MiniCssExtractPlugin.loader
+                },
+                'css-loader',
+                "sass-loader",
+            ]
+        },
+
+        {
+            test: /\.(css|scss)$/,
+            include: [
+                path.resolve(__dirname, '../src/config/init/style'),
+            ],
+            use: [
+                {
+                    loader: MiniCssExtractPlugin.loader
+                },
+                'css-loader',
+                "sass-loader",
+            ]
+        },
         ]
     },
     optimization: {
@@ -104,4 +100,4 @@ const Config = {
     }
 }
 
-module.exports = merge(Config, DllConfig);
+module.exports = merge(Config, DllConfig)
