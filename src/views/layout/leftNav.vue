@@ -1,5 +1,5 @@
 <template>
-  <div id="left-nav">
+  <div :class="className.leftnav">
     <el-menu
       :default-active="this.$route.path"
       class="el-menu-vertical-demo"
@@ -32,6 +32,7 @@
 
 <script>
 import { setTimeout } from 'timers';
+import layout from './layout.scss';
 export default {
   components: {},
   props: {
@@ -39,21 +40,11 @@ export default {
       required: true
     },
     watch: {
-        // toggle(val) {
-        //      let rightLay = document.querySelector('#right-lay');
-        //     const winWidth = window.innerWidth;
-        //     if(!val) {
-        //         rightLay.style.width = (winWidth - 201) + 'px';
-        //     } else {
-        //         setTimeout(() => {
-        //             rightLay.style.width = (winWidth - 65) + 'px';
-        //         },300)
-        //     }
-        // }
     },
   data() {
     return {
       isCollapse: true,
+      className: layout,
       toggleIcon: 'el-icon-s-unfold',
       listData: [
           {
@@ -112,12 +103,3 @@ export default {
 };
 </script>
 
-<style>
-.el-submenu__title i {
-    color: #fff
-}
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
-</style>

@@ -29,6 +29,10 @@
                 a: 231231231312,
                 className: aa,
             }
+        },
+        mounted() {
+            console.log(this.className);
+            
         }
     }
 </script>

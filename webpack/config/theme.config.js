@@ -1,10 +1,7 @@
 /*
- * @Company: JiangSu LangChuang
- * @Author: Lu YiMing
- * @Date: 2019-09-13 00:26:33
- * @LastAuthor: Lu YiMing
- * @lastTime: 2019-09-15 19:02:35
- * @FileUse: 文本文件用于
+ * @creater: Lu YiMing
+ * @Date: 2019-09-15 19:26:28
+ * @use: use
  */
 /**
  * @creater luyiming
@@ -28,12 +25,13 @@ const Config = {
             'vue$': 'vue/dist/vue.esm.js',
             '$views': path.resolve(process.cwd(), 'src', 'views'),
             '$entry': path.resolve(process.cwd(), 'src', 'entry'),
+            '$config': path.resolve(process.cwd(), 'src', 'config'),
+            '$scss': path.resolve(process.cwd(), 'src', 'scss'),
             'router': path.resolve(process.cwd(), 'src', 'config', 'router')
         }
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 exclude: /node_modules/,
@@ -72,9 +70,6 @@ const Config = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            favicon: 'favicon.ico'
-        }),
         new VueLoaderPlugin({}),
     ]
 }

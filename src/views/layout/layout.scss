@@ -1,0 +1,40 @@
+
+.header {
+    height: 56px;
+    line-height: 56px;  
+    box-shadow:0px 2px 8px 0px rgba(198,198,198,0.5);
+}
+.headerlayout {
+    font-size: 18px;
+        .i {
+            font-size: 24px;
+        }
+}
+.fold {
+    display: inline-block;
+    vertical-align: middle;
+    width: 34px;
+    height: 34px;
+    line-height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    transition: .7s;
+    &:hover {
+        background: rgb(240, 238, 238);
+    }
+}
+// 头像
+.avatar {
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    background:rgba(242,242,242,1);
+    border:1px solid rgba(190,190,190,1);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.leftnav {
+    height: 100%;
+}
