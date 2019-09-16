@@ -68,7 +68,6 @@ new Vue({
     },
     methods:{
         toggleFold(param) {
-            console.log(param)
             this.toggleCol = param;
           }
     }
