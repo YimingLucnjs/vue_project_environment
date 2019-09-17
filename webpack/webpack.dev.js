@@ -22,7 +22,7 @@ const Config = {
             test: /\.(css|scss)$/,
             exclude: [
                 /node_modules/,
-                path.resolve(__dirname, '../src/config/init/style')
+                path.resolve(__dirname, '../src/config')
             ],
             use: [
                 'style-loader',
@@ -64,7 +64,7 @@ const Config = {
         {
             test: /\.(css|scss)$/,
             include: [
-                path.resolve(__dirname, '../src/config/init/style'),
+                path.resolve(__dirname, '../src/config'),
             ],
             use: [
                 'style-loader',
