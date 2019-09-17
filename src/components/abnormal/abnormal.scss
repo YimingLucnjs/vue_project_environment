@@ -1,0 +1,44 @@
+#abnormal {
+  background: #fff;
+  border-radius: 2px;
+  padding: 20px;
+  .title {
+    font-size:18px;
+    font-family:PingFangSC;
+    font-weight:500;
+    color:rgba(74,74,74,1);
+    line-height:25px;
+  }
+  .colStyle {
+    border-right: 1px solid rgba(242, 242, 242, 1);
+    margin: 20px 0;
+    &:last-child {
+        border: none;
+    }
+    .word {
+      font-family: PingFangSC;
+      font-weight: 400;
+      color: rgba(155, 155, 155, 1);
+      white-space: pre-wrap;
+    }
+    .count {
+      font-weight: 600;
+      font-size: 34px;
+      line-height: 48px;
+    }
+  }
+  .ratherWord {
+    font-size:12px;
+    font-family:PingFangSC;
+    font-weight:400;
+    color:rgba(74,74,74,1)
+  }
+  .caretTop {
+      font-size: 10px;
+      color: rgba(126,211,33,1);
+  }
+  .caretBottom {
+      font-size: 10px;
+      color: rgba(208,2,27,1);
+}
+}

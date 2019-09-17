@@ -6,3 +6,23 @@ $--color-primary: teal;
 
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 @import "~element-ui/packages/theme-chalk/src/index";
+
+/* 改变 侧边栏字体图标颜色 */
+.el-submenu__title i {
+    color: #fff
+}
+.el-menu-item i {
+    color: #fff
+}
+/* 栅格高度 */
+.el-container {
+    height: 100%;
+}
+/* 设置侧边栏展开宽度 */
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+}
+.el-menu {
+    height: 100%;
+}

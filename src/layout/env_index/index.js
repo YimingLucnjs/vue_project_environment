@@ -10,7 +10,7 @@ export default {
     data() { 
         return {
             // 控制左侧导航的显示方式（小屏/大屏）
-            toggleCol: false
+            toggleCol: true
         }
     },
     render(){

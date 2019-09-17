@@ -10,20 +10,16 @@ import Router from 'vue-router';
 
 import EnvIndex from '$layout/env_index/index.js';
 // 路由
-const Routers = [
-    {
-        path: '/',
-        name: 'EnvIndex',
-        component: EnvIndex,
-        children: [
-            {
-                path: `/HomePageRCIM`,
-                name: '首页',
-                component: (resolve) => require(['$views/test/test.vue'], resolve),
-            },
-        ]
-    },
-];
+const Routers = [{
+    path: '/',
+    name: 'EnvIndex',
+    component: EnvIndex,
+    children: [{
+        path: `/HomePageLOAM`,
+        name: '首页',
+        component: (resolve) => require(['$views/LOAM/HomePage/HomePage.vue'], resolve),
+    }, ]
+}, ];
 const RouterExample = new Router({
     // mode: 'history', //后端支持可开
     scrollBehavior: () => ({ y: 0 }),
