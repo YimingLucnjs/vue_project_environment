@@ -3,7 +3,7 @@
  * @Author: Lu YiMing
  * @Date: 2019-09-12 11:34:11
  * @LastAuthor: Please set LastEditors
- * @lastTime: 2019-09-16 12:45:57
+ * @lastTime: 2019-09-17 08:44:10
  * @FileUse: 文本文件用于
  */
 import Vue from 'vue/dist/vue.esm.js';
@@ -14,8 +14,6 @@ import {Container,Header,Aside,Main,Row,Col,Menu,Submenu,MenuItem,MenuItemGroup,
 // import '$scss/element.scss';
 import '$config/init/style/reset.scss';
 import 'element-ui/lib/theme-chalk/index.css';
-import LeftNav from '$views/layout/leftNav.vue';
-import HeadNav from '$views/layout/headNav.vue';
 
 Vue.use(vueRouter)
 Vue.use(Container)
@@ -34,37 +32,13 @@ Vue.use(Button)
 
 new Vue({
     el: '#text',
-    data: {
-        msg: '1111',
-        toggleCol: true
-    },
     router,
     render(h) {
         return (
-            <div>
-                {/* <transition name="fade">
-                    <router-view class="view"></router-view>
-                </transition> */}
-                <el-button>sadsa</el-button>
-                <el-container>
-                    <el-aside style="display:inline-block;width:auto;height:auto;">
-                        <LeftNav toggle={ this.toggleCol }></LeftNav>
-                    </el-aside>
-                    <el-container>
-                        <el-header style="padding:0;">
-                            <HeadNav toggleFold={ this.toggleFold }></HeadNav>
-                        </el-header>
-                        <el-main style="background:rgba(240,241,241,1);">
-                            <router-view></router-view>
-                        </el-main>
-                    </el-container>
-                </el-container>
-            </div>
+            <transition name="fade">
+                <router-view class="view"></router-view>
+            </transition>
         )
     },
-    methods:{
-        toggleFold(param) {
-            this.toggleCol = param;
-          }
-    }
+    
 })

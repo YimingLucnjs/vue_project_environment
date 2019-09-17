@@ -25,6 +25,8 @@ const Config = {
             'vue$': 'vue/dist/vue.esm.js',
             '$views': path.resolve(process.cwd(), 'src', 'views'),
             '$entry': path.resolve(process.cwd(), 'src', 'entry'),
+            '$layout': path.resolve(process.cwd(), 'src', 'layout'),
+            '$components': path.resolve(process.cwd(), 'src', 'components'),
             '$config': path.resolve(process.cwd(), 'src', 'config'),
             '$scss': path.resolve(process.cwd(), 'src', 'scss'),
             'router': path.resolve(process.cwd(), 'src', 'config', 'router')
