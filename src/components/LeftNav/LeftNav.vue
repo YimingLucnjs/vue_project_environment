@@ -32,7 +32,7 @@
 
 <script>
 import { setTimeout } from 'timers';
-import layout from './layout.scss';
+import LeftNav from './LeftNav.scss';
 export default {
   components: {},
   props: {
@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       isCollapse: true,
-      className: layout,
+      className: LeftNav,
       toggleIcon: 'el-icon-s-unfold',
       listData: [
           {
@@ -98,7 +98,6 @@ export default {
   mounted() {
         this.haveChildMenu = this.listData.filter(item => item.children)
         this.noneChildMenu = this.listData.filter(item => !item.children)
-        console.log(this.haveChildMenu,this.noneChildMenu)
   }
 };
 </script>

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import layout from './layout.scss';
+import HeadNav from './HeadNav.scss';
 export default {
   components: {
       
@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       iconFold: true,
-      className: layout
+      className: HeadNav
     };
   },
   methods: {
