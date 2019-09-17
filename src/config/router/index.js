@@ -17,9 +17,9 @@ const Routers = [
         component: EnvIndex,
         children: [
             {
-                path: `/HomePageRCIM`,
+                path: `/HomePageLOAM`,
                 name: '首页',
-                component: (resolve) => require(['$views/test/test.vue'], resolve),
+                component: (resolve) => require(['$views/LOAM/HomePage/HomePage.vue'], resolve),
             },
         ]
     },

@@ -10,7 +10,7 @@ import Vue from 'vue/dist/vue.esm.js';
 import vueRouter from 'vue-router';
 import router from 'router';
 import vuex from 'vuex';
-import {Container,Header,Aside,Main,Row,Col,Menu,Submenu,MenuItem,MenuItemGroup,Icon, Button} from 'element-ui';
+import {Container,Header,Aside,Main,Row,Col,Menu,Submenu,MenuItem,MenuItemGroup,Icon,Avatar, Button} from 'element-ui';
 // import '$scss/element.scss';
 import '$config/init/style/reset.scss';
 // import 'element-ui/lib/theme-chalk/index.css';
@@ -28,6 +28,7 @@ Vue.use(Submenu)
 Vue.use(MenuItem)
 Vue.use(MenuItemGroup)
 Vue.use(Icon)
+Vue.use(Avatar)
 Vue.use(Button)
 // console.log('Button', Button)
 
