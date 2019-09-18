@@ -9,8 +9,8 @@ var overlapBar = {
             const item = params[0];
             const item1 = params[2];
             return `
-                    邮件营销：${item.data} 
-                    \r\n 联盟广告：${item1.data}
+                    ${item.name}：${item.data} 
+                    <br/> ${item.name}：${item1.data}
                    `;
         },
     },
@@ -88,7 +88,7 @@ var overlapBar = {
 
     ]
 }
-
+// 圆环
 var circlet = {
     tooltip: {
         trigger: 'item',
@@ -143,8 +143,57 @@ var circlet = {
         }
     ]
 };
-
-export default {
+//  饼图
+var pieChart = {
+    tooltip : {
+        trigger: 'item',
+        /**
+         * 参数：
+         * @param {*} point 鼠标位置，如 [20, 40]
+         * @param {*} params 同 formatter 的参数相同
+         * @param {*} dom tooltip 的 dom 对象
+         * @param {*} rect 只有鼠标在图形上时有效，是一个用x, y, width, height四个属性表达的图形包围盒
+         * @param {*} size 包括 dom 的尺寸和 echarts 容器的当前尺寸，例如：{contentSize: [width, height], viewSize: [width, height]}
+         * @returns {Array} point 点位位置
+         */
+        position: function(point, params, dom, rect, size){ // point: 鼠标位置
+            var tipHeight = point[1] + size.contentSize[1]; // contentSize: 提示dom 窗口大小
+            if(tipHeight > size.viewSize[1] ){              // viewSize: echarts 容器大小
+                return [point[0]+40, point[1]-size.contentSize[1]];
+            } else if(point[1] < size.contentSize[1]){
+                return [point[0]+40, point[1]+20];
+            } else {
+                return point;
+            }
+        },
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    series : [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius : '100%',
+            center: ['50%', '50%'],
+            data:[
+                {value:335, name:'直接访问'},
+                {value:310, name:'邮件营销'},
+                {value:274, name:'联盟广告'},
+                {value:400, name:'搜索引擎'}
+            ].sort(function (a, b) { return a.value - b.value; }),
+            roseType: 'radius',
+            label: {
+                show: false
+            },
+            animationType: 'scale',
+            animationEasing: 'elasticOut',
+            animationDelay: function (idx) {
+                return Math.random() * 200;
+            }
+        }
+    ]
+};
+export {
     overlapBar,
-    circlet
+    circlet,
+    pieChart
 }

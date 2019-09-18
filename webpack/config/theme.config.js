@@ -23,6 +23,7 @@ const Config = {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
+            '$src': path.resolve(process.cwd(), 'src'),
             '$views': path.resolve(process.cwd(), 'src', 'views'),
             '$entry': path.resolve(process.cwd(), 'src', 'entry'),
             '$layout': path.resolve(process.cwd(), 'src', 'layout'),
