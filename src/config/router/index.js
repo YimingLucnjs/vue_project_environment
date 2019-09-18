@@ -18,6 +18,10 @@ const Routers = [{
         path: `/HomePageLOAM`,
         name: '首页',
         component: (resolve) => require(['$views/LOAM/HomePage/HomePage.vue'], resolve),
+    }, {
+        path: `/test`,
+        name: '测试',
+        component: (resolve) => require(['$views/test/test.vue'], resolve),
     }, ]
 }, ];
 const RouterExample = new Router({

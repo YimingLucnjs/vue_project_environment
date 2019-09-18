@@ -1,11 +1,3 @@
-<!--
- * @Company: JiangSu LangChuang
- * @Author: Lu YiMing
- * @Date: 2019-09-11 08:51:04
- * @LastAuthor: Lu YiMing
- * @lastTime: 2019-09-13 22:37:04
- * @FileUse: 文本文件用于
- -->
 #前端项目
 
 ##项目依赖

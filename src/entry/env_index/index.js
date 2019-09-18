@@ -8,15 +8,20 @@
  */
 import Vue from 'vue/dist/vue.esm.js';
 import vueRouter from 'vue-router';
-import router from 'router';
-import vuex from 'vuex';
+
 import {Container,Header,Aside,Main,Row,Col,Menu,Submenu,MenuItem,MenuItemGroup,Icon,Avatar, Button} from 'element-ui';
 // import '$scss/element.scss';
 import '$config/init/style/reset.scss';
 // import 'element-ui/lib/theme-chalk/index.css';
 import '$config/element-ui/element.scss';
+// router实例
+import router from 'router';
+// vuex实例
+import store from '$store';
 
+// vue-router
 Vue.use(vueRouter)
+//element-ui 按需引入组件
 Vue.use(Container)
 Vue.use(Header)
 Vue.use(Aside)
@@ -30,17 +35,26 @@ Vue.use(MenuItemGroup)
 Vue.use(Icon)
 Vue.use(Avatar)
 Vue.use(Button)
-// console.log('Button', Button)
+
+setTimeout( () => {
+    debugger
+    // store.dispatch('windowSizeChange', '212112')
+    console.log(store)
+}, 5000)
 
 new Vue({
     el: '#text',
     router,
+    store,
     render(h) {
         return (
             <transition name="fade">
                 <router-view class="view"></router-view>
             </transition>
         )
+    },
+    data:{
+        // windowResized:this.$store.state.system.windowResized,
     },
     
 })

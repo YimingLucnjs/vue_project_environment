@@ -16,6 +16,7 @@
         <div class="dd">
         323212
         </div>
+        {{windowResized}}
     </div>
     
 </template>
@@ -31,8 +32,16 @@
             }
         },
         mounted() {
-            console.log(this.className);
+            console.log(this)
             
+        },
+        
+        component: {
+            windowResized() {
+                debugger
+                console.log('this.$store.state.system.windowResized',this.$store.state.system.windowResized)
+                return this.$store.state.system.windowResized;
+            },
         }
     }
 </script>

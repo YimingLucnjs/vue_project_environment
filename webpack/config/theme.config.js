@@ -29,6 +29,7 @@ const Config = {
             '$components': path.resolve(process.cwd(), 'src', 'components'),
             '$config': path.resolve(process.cwd(), 'src', 'config'),
             '$scss': path.resolve(process.cwd(), 'src', 'scss'),
+            '$store': path.resolve(process.cwd(), 'src', 'store'),
             'router': path.resolve(process.cwd(), 'src', 'config', 'router')
         }
     },
