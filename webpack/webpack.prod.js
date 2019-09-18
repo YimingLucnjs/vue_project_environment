@@ -26,7 +26,10 @@ const Config = {
             favicon: './favicon.ico'
         }),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({}),
+        new MiniCssExtractPlugin({
+            filename: "css/[name].css",
+            chunkFilename: "css/modules/[id].css"
+        }),
     ],
     module: {
         rules: [
@@ -82,7 +85,8 @@ const Config = {
     },
     optimization: {
         minimizer: [
-            new OptimizeCSSAssetsPlugin({}),
+            new OptimizeCSSAssetsPlugin({
+            }),
             new TerserJSPlugin(),
         ]
     }

@@ -16,7 +16,8 @@ const Config = {
         index: './src/entry/env_index/index.js',
     },
     output: {
-        filename: '[name].js',
+        filename: 'js/[name].js',
+        chunkFilename: 'js/chunks/[id].[chunkhash:5].js',
         path: path.resolve(process.cwd(), './dist')
     },
     resolve: {
@@ -36,45 +37,68 @@ const Config = {
     },
     module: {
         rules: [{
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.js$/,
-                loader: "babel-loader",
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: 'static/images/[name].[hash:7].[ext]'
-                }
-            },
-            {
-                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: 'static/media/[name].[hash:7].[ext]'
-                }
-            },
-            {
-                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: 'static/fonts/[name].[hash:7].[ext]'
-                }
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            exclude: /node_modules/,
+        },
+        {
+            test: /\.js$/,
+            loader: "babel-loader",
+            exclude: /node_modules/,
+        },
+        {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'static/images/[name].[hash:7].[ext]'
             }
+        },
+        {
+            test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'static/media/[name].[hash:7].[ext]'
+            }
+        },
+        {
+            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'static/fonts/[name].[hash:7].[ext]'
+            }
+        }
 
 
         ]
     },
     plugins: [
         new VueLoaderPlugin({}),
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            minSize: 30000,
+            maxSize: 30000,
+            minChunks: 2,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '-',
+            name: true,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true
+                }
+            }
+        }
+    }
 }
 module.exports = Config
