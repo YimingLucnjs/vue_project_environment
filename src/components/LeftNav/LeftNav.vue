@@ -46,7 +46,7 @@ export default {
                 {
                     id: '2',
                     navName: '历史数据',
-                    navTo: '/',
+                    navTo: '/test',
                     icon: 'el-icon-s-data'
                 },
                 //   {

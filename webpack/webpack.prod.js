@@ -37,7 +37,9 @@ const Config = {
                     path.resolve(__dirname, '../src/scss'),
                 ],
                 use: [
-                    'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     {
                         loader: 'css-loader',
                         options: {
