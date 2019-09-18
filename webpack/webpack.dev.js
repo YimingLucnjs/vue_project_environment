@@ -14,7 +14,7 @@ const Config = {
     devServer: {
         contentBase: 'dist/',
         open: true,
-        port: 9090,
+        port: 8081,
         hot: true,
         compress: true,
         noInfo: true,

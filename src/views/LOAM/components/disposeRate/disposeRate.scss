@@ -1,0 +1,12 @@
+#syntheticData {
+    background: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    height: 200px;
+    overflow: hidden;
+    .title {
+      @include home-title
+    }
+    
+  }
+  

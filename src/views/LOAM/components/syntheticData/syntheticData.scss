@@ -1,0 +1,39 @@
+#syntheticData {
+  background: #fff;
+  border-radius: 2px;
+  padding: 20px;
+  height: 200px;
+  overflow: hidden;
+  .title {
+    @include home-title
+  }
+  .chartStyle {
+    height: 140px;
+  }
+  .dataGrid {
+    margin-top: 20px;
+    
+    .category {
+      .wordStyle {
+        text-align: center;
+        .point {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .word {
+            @include content-font
+        }
+      }
+
+      .count {
+        font-size: 34px;
+        font-weight: 500;
+        text-align: center;
+        color: rgba(74, 74, 74, 1);
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
                <Abnormal></Abnormal>
            </el-col>
            <el-col :span="8">
-               <Abnormal></Abnormal>
+               <synthetic-data></synthetic-data>
            </el-col>
            <el-col :span="8">
                <Abnormal></Abnormal>
@@ -16,9 +16,11 @@
 
 <script>
 import Abnormal from '$components/abnormal/abnormal.vue';
+// 综合指数
+import syntheticData from "../components/syntheticData/syntheticData";
 export default {
     components: {
-        Abnormal
+        Abnormal,syntheticData
     }
 }
 </script>

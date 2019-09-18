@@ -15,7 +15,8 @@ import '$scss/index.scss';
 import router from 'router';
 // vuex实例
 import store from '$store';
-
+// 引入echarts
+import echarts from 'echarts'
 // vue-router
 Vue.use(vueRouter)
 //element-ui 按需引入组件
@@ -32,6 +33,8 @@ Vue.use(MenuItemGroup)
 Vue.use(Icon)
 Vue.use(Avatar)
 Vue.use(Button)
+// vue原型添加echarts
+Vue.prototype.$echarts = echarts
 
 new Vue({
     el: '#text',

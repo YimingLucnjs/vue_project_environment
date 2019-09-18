@@ -16,7 +16,7 @@
         <div class="dd">
         323212
         </div>
-        <el-button>12321</el-button>
+        <ls-progress></ls-progress>
         {{windowResized}}
     </div>
     
@@ -24,6 +24,7 @@
 
 <script>
     import aa from './test.scss';
+    import lsProgress from "$components/progress/progress";
     export default {
         name: 'testtemp',
         data() { 
@@ -34,6 +35,15 @@
         },
         mounted() {
         },
+        components: {
+            lsProgress
+        },
+        component: {
+            windowResized() {
+                console.log('this.$store.state.system.windowResized',this.$store.state.system.windowResized)
+                return this.$store.state.system.windowResized;
+            },
+        }
     }
 </script>
 
