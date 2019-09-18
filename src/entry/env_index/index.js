@@ -54,7 +54,6 @@ new Vue({
             timer = setTimeout( () => {
                 const wWidth = document.body.clientWidth || document.documentElement.clientWidth;
                 this.$store.dispatch('system/windowSizeChange', wWidth)
-                flag = true
             }, 200)
         }
         

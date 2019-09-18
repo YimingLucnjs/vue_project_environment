@@ -1,6 +1,6 @@
 <template>
 <div :class="className.leftnav">
-    <el-menu :default-active="'HomePageLOAM'" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="toggle" background-color="#405889" text-color="#fff" active-text-color="#ffd04b" router>
+    <el-menu :default-active="'HomePageLOAM'" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="windowResized || toggle" background-color="#405889" text-color="#fff" active-text-color="#ffd04b" router>
         <el-menu-item> </el-menu-item>
         <el-menu-item v-for="item in noneChildMenu" :key="item.id" :index="item.navTo">
             <i :class="item.icon"></i>
