@@ -16,6 +16,7 @@
         <div class="dd">
         323212
         </div>
+        <el-button>12321</el-button>
         {{windowResized}}
     </div>
     
@@ -32,17 +33,7 @@
             }
         },
         mounted() {
-            console.log(this)
-            
         },
-        
-        component: {
-            windowResized() {
-                debugger
-                console.log('this.$store.state.system.windowResized',this.$store.state.system.windowResized)
-                return this.$store.state.system.windowResized;
-            },
-        }
     }
 </script>
 

@@ -10,10 +10,7 @@ import Vue from 'vue/dist/vue.esm.js';
 import vueRouter from 'vue-router';
 
 import {Container,Header,Aside,Main,Row,Col,Menu,Submenu,MenuItem,MenuItemGroup,Icon,Avatar, Button} from 'element-ui';
-// import '$scss/element.scss';
-import '$config/init/style/reset.scss';
-// import 'element-ui/lib/theme-chalk/index.css';
-import '$config/element-ui/element.scss';
+import '$scss/index.scss';
 // router实例
 import router from 'router';
 // vuex实例
@@ -36,12 +33,6 @@ Vue.use(Icon)
 Vue.use(Avatar)
 Vue.use(Button)
 
-setTimeout( () => {
-    // debugger
-    // store.dispatch('windowSizeChange', '212112')
-    console.log(store)
-}, 5000)
-
 new Vue({
     el: '#text',
     router,
@@ -53,8 +44,16 @@ new Vue({
             </transition>
         )
     },
-    data:{
-        // windowResized:this.$store.state.system.windowResized,
+    mounted() {
+        let timer = null;
+        window.onresize = () => {
+            if(timer) clearTimeout(timer);
+            timer = setTimeout( () => {
+                const wWidth = document.body.clientWidth || document.documentElement.clientWidth;
+                this.$store.dispatch('system/windowSizeChange', wWidth)
+                flag = true
+            }, 200)
+        }
+        
     },
-    
 })

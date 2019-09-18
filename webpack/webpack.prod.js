@@ -29,67 +29,53 @@ const Config = {
         new MiniCssExtractPlugin({}),
     ],
     module: {
-        rules: [{
-            test: /\.(css|scss)$/,
-            exclude: [
-                /node_modules/,
-                path.resolve(__dirname, '../src/config'),
-            ],
-            use: [
-                {
-                    loader: MiniCssExtractPlugin.loader
-                },
-                {
-                    loader: 'css-loader',
-                    options: {
-                        modules: {
-                            mode: 'local',
-                            localIdentName: 'env_[local]_[hash:base64:5]',
-                            context: path.resolve(__dirname, 'src'),
-                            hashPrefix: 'my-custom-hash',
-                        },
-                    }
-                },
-                "sass-loader",
-                {
-                    loader: 'sass-resources-loader',
-                    options: {
-                        resources: [
-                            path.resolve(__dirname, '../src/scss/mixin.scss'),
-                            path.resolve(__dirname, '../src/scss/variable.scss'),
-                        ]
-                    }
-                },
-                'postcss-loader',
-            ]
-        },
-        {
-            test: /\.(css|scss)$/,
-            exclude: [
-                path.resolve(__dirname, '../src'),
-            ],
-            use: [
-                {
-                    loader: MiniCssExtractPlugin.loader
-                },
-                'css-loader',
-                "sass-loader",
-            ]
-        },
-
-        {
-            test: /\.(css|scss)$/,
-            include: [
-                path.resolve(__dirname, '../src/config'),
-            ],
-            use: [
-                {
-                    loader: MiniCssExtractPlugin.loader
-                },
-                'css-loader',
-                "sass-loader",
-            ]
-        },
+        rules: [
+            {
+                test: /\.(css|scss)$/,
+                exclude: [
+                    /node_modules/,
+                    path.resolve(__dirname, '../src/scss'),
+                ],
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                mode: 'local',
+                                localIdentName: 'env_[local]_[hash:base64:5]',
+                                context: path.resolve(__dirname, 'src'),
+                                hashPrefix: 'my-custom-hash',
+                            },
+                        }
+                    },
+                    "sass-loader",
+                    {
+                        loader: 'sass-resources-loader',
+                        options: {
+                            resources: [
+                                path.resolve(__dirname, '../src/config/style/mixin.scss'),
+                                path.resolve(__dirname, '../src/config/style/variable.scss'),
+                            ]
+                        }
+                    },
+                    'postcss-loader',
+                ]
+            },
+            {
+                test: /\.(css|scss)$/,
+                include: [
+                    /node_modules/,
+                    path.resolve(__dirname, '../src/scss'),
+                ],
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    'css-loader',
+                    "sass-loader",
+                ]
+            },
         ]
     },
     optimization: {

@@ -14,6 +14,7 @@ const Routers = [{
     path: '/',
     name: 'EnvIndex',
     component: EnvIndex,
+    redirect: '/HomePageLOAM',
     children: [{
         path: `/HomePageLOAM`,
         name: '首页',
