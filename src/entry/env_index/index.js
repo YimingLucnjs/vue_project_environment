@@ -37,7 +37,7 @@ Vue.use(Avatar)
 Vue.use(Button)
 
 setTimeout( () => {
-    debugger
+    // debugger
     // store.dispatch('windowSizeChange', '212112')
     console.log(store)
 }, 5000)
