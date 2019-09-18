@@ -58,7 +58,8 @@
 		"webpack": "^4.39.3",
 		"webpack-cli": "^3.3.8",
 		"webpack-dev-server": "^3.8.0",
-		"webpack-merge": "^4.2.2"
+		"webpack-merge": "^4.2.2",
+		"webpackbar": "^4.0.0"
 	},
 	"dependencies": {
 		"@babel/polyfill": "^7.6.0",

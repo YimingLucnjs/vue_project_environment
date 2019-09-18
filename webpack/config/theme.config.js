@@ -9,6 +9,8 @@
  * @use the same webpack config 
  */
 const path = require('path');
+const Webpack = require('webpack');
+const WebpackBar = require('webpackbar');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const Config = {
@@ -75,6 +77,8 @@ const Config = {
         ]
     },
     plugins: [
+        new WebpackBar(),
+        new Webpack.NamedModulesPlugin(),
         new VueLoaderPlugin({}),
     ],
     optimization: {

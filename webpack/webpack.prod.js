@@ -85,11 +85,11 @@ const Config = {
     },
     optimization: {
         minimizer: [
-            new OptimizeCSSAssetsPlugin({
-            }),
-            new TerserJSPlugin(),
+            new OptimizeCSSAssetsPlugin({}),
+            new TerserJSPlugin({}),
         ]
-    }
+    },
+    stats: "errors-only",
 }
 
 module.exports = merge(Config, DllConfig)
