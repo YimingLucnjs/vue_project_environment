@@ -7,7 +7,7 @@ export default {
     props: {
         width: {
             type: [String,Number],
-            default: () => {}
+            default: () => ''
         },
         height: {
             type: [String,Number],
@@ -27,6 +27,15 @@ export default {
             progress: 0
         }
     },
+    watch: {
+        width(val) {
+             setTimeout(() => {
+                const canvas = document.getElementById('progress');
+                const context = canvas.getContext('2d')
+                this.drawProgress(context,canvas)
+             },1000)
+        }
+    },
     methods: {
         drawProgress(context, canvas) {
             // 清空画布，重新绘制
@@ -39,7 +48,7 @@ export default {
             context.lineTo(canvas.width - 30,canvas.height/2);
             context.stroke();
             context.closePath(); 
-             // 开始绘制绿色线段
+             // 开始绘制线段
             context.beginPath();
             context.lineWidth = 12;// 设置线宽
             context.strokeStyle = this.color;// 画笔颜色
@@ -52,7 +61,7 @@ export default {
                 // 通过setTimeout进行递归调用更新
                 setTimeout(()=>{
                     this.drawProgress(context, canvas);
-                },10)
+                },0)
             }
         }
     },
@@ -60,7 +69,7 @@ export default {
         const canvas = document.getElementById('progress');
         const context = canvas.getContext('2d')
         // 调用画图方法
-        this.drawProgress(context,canvas)
+        // this.drawProgress(context,canvas)
     }
 }
 </script>

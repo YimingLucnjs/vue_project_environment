@@ -5,7 +5,8 @@
   height: 200px;
   overflow: hidden;
   .title {
-    @include home-title
+    @include font-style(18px);
+    font-weight: 600;
   }
   .chartStyle {
     height: 140px;
@@ -24,15 +25,13 @@
           vertical-align: middle;
         }
         .word {
-            @include content-font
+          @include font-style(16px)
         }
       }
 
       .count {
-        font-size: 34px;
-        font-weight: 500;
+        @include font-style(34px);
         text-align: center;
-        color: rgba(74, 74, 74, 1);
       }
     }
   }

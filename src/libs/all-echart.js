@@ -62,7 +62,7 @@ var overlapBar = {
             name: '邮件营销',
             type: 'bar',
             itemStyle: {
-                color: 'yellow'
+                color: '#FFC928'
             },
             data: [120, 132, 101, 134, 90, 230, 210]
         },
@@ -81,7 +81,7 @@ var overlapBar = {
             barGap: '-100%',
             stack: '广告',
             itemStyle: {
-                color: "blue"
+                color: "#1790FF"
             },
             data: [220, 182, 191, 234, 290, 330, 310]
         }
@@ -90,10 +90,10 @@ var overlapBar = {
 }
 // 圆环
 var circlet = {
-    tooltip: {
-        trigger: 'item',
-        formatter: "{a} <br/>{b}: {c} ({d}%)"
-    },
+    // tooltip: {
+    //     trigger: 'item',
+    //     formatter: "{a} <br/>{b}: {c} ({d}%)"
+    // },
     legend: {
         orient: 'vertical',
         x: 'left',
@@ -102,25 +102,25 @@ var circlet = {
     },
     series: [
         {
-            name:'访问来源',
+            name:'',
             type:'pie',
-            radius: ['40%', '50%'],
+            radius: ['85%', '95%'],
             avoidLabelOverlap: false,
-            // label: {
-            //     normal: {
-            //         show: true,
-            //         align: 'center',
-            //         formatter(params) {
-            //             const item = params[0];
-            //             console.log(params)
-            //             return `
-            //                     ${params.data.value}%
-            //                    `;
-            //         },
-            //         fontSize: 30,
-            //         color:"#000"
-            //     },
-            // },
+            label: {
+                normal: {
+                    show: false,
+                    align: 'center',
+                    formatter(params) {
+                        const item = params[0];
+                        console.log(params)
+                        return `
+                                ${params.data.value}%
+                               `;
+                    },
+                    fontSize: 24,
+                    color:"#000"
+                },
+            },
             labelLine: {
                 normal: {
                     show: false
@@ -134,7 +134,7 @@ var circlet = {
                     position: 'center',
                     formatter: '{d}%',
                     color: '#000',
-                    fontSize: 40
+                    fontSize: 30
                 }},
                 {value:20, name:'邮件营销',itemStyle:{
                     color:'transparent'

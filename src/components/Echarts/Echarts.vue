@@ -9,19 +9,29 @@ export default {
     props: ['options', 'id'],
     data: function () {
         return {
-
+            myChart: ''
         }
     },
     watch: {
         options(val) {
             console.log(val);
-
-            var myChart = this.$echarts.init(document.getElementById(this.id));
-            myChart.setOption(val);
+            
+            this.myChart = this.$echarts.init(document.getElementById(this.id));
+            this.myChart.setOption(val);
+        },
+        windowResized() {
+            // 窗口改变时图表重新绘制
+            this.myChart.resize()
         }
     },
-    mounted: function () {
-
+    mounted(){
+        
+    },
+    computed: {
+        // 通过vuex监听窗口大小
+        windowResized() {
+            return this.$store.state.system.windowResized
+        }
     }
 }
 </script>

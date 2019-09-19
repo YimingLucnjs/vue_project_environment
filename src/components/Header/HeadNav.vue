@@ -26,7 +26,7 @@ export default {
     },
     data() {
         return {
-            iconFold: true,
+            iconFold: false,
             className: HeadNav
         };
     },
