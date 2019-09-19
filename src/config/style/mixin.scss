@@ -2,18 +2,9 @@
     background: $color;
 }
 
-@mixin home-title {
-    font-size: 18px;
+@mixin font-style($font: 18px,$color:#4A4A4A) {
+    font-size: $font;
     font-family: PingFangSC;
     font-weight: 500;
-    color: #4A4A4A;
-    line-height: 25px;
-}
-
-@mixin content-font($font: 16px) {
-    font-size:$font;
-    font-family:PingFangSC;
-    font-weight:500;
-    color:rgba(155,155,155,1);
-    line-height:22px;
+    color: $color;
 }

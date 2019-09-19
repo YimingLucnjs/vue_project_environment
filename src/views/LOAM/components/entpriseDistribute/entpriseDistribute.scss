@@ -1,0 +1,66 @@
+#enterpriseDistribute {
+  background: #fff;
+  border-radius: 2px;
+  padding: 20px;
+  height: 320px;
+  overflow: hidden;
+  .title {
+    @include font-style(18px);
+    font-weight: 600;
+  }
+  .chartStyle {
+    height: 250px;
+  }
+  .rightTopGrid {
+    padding: 12px 10px 12px 0;
+    border-radius: 6px;
+    border: 1px solid rgba(242, 242, 242, 1);
+    .category {
+      .wordStyle {
+        text-align: center;
+        .point {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .word {
+          @include font-style(16px);
+        }
+      }
+
+      .count {
+        @include font-style(34px);
+        text-align: center;
+      }
+    }
+  }
+  .rank {
+      padding: 25px;
+      .rankTitle {
+        @include font-style(14px);
+        font-weight: 600;
+        line-height: 34px;
+      }
+      .rankSerial {
+        line-height: 30px;
+        .serialNum {
+            width:16px;
+            height:16px;
+            background: #4a4a4a;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 16px;
+            float: left;
+            color: #fff;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .serialWord {
+            margin-left: 8px;
+            float: left;
+        }
+      }
+  }
+}

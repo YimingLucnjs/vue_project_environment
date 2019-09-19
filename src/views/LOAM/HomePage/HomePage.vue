@@ -8,7 +8,15 @@
                <synthetic-data></synthetic-data>
            </el-col>
            <el-col :span="8">
-               <Abnormal></Abnormal>
+               <dispose-rate></dispose-rate>
+           </el-col>
+       </el-row>
+       <el-row :gutter="20" style="margin-top:20px;">
+           <el-col :span="12">
+               <entprise-distribute></entprise-distribute>
+           </el-col>
+           <el-col :span="12">
+               <device-run></device-run>
            </el-col>
        </el-row>
    </div>
@@ -18,9 +26,14 @@
 import Abnormal from '$components/abnormal/abnormal.vue';
 // 综合指数
 import syntheticData from "../components/syntheticData/syntheticData";
+// 处置率
+import disposeRate from "../components/disposeRate/disposeRate";
+// 企业分布
+import entpriseDistribute from "../components/entpriseDistribute/entpriseDistribute";
+import deviceRun from "../components/deivceRun/deviceRun";
 export default {
     components: {
-        Abnormal,syntheticData
+        Abnormal,syntheticData,disposeRate,entpriseDistribute,deviceRun
     }
 }
 </script>

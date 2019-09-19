@@ -1,12 +1,41 @@
-#syntheticData {
-    background: #fff;
-    border-radius: 2px;
-    padding: 20px;
-    height: 200px;
-    overflow: hidden;
-    .title {
-      @include home-title
-    }
-    
+#disposeRate {
+  background: #fff;
+  border-radius: 2px;
+  padding: 20px;
+  height: 200px;
+  overflow: hidden;
+  .title {
+    @include font-style(18px);
+    font-weight: 600;
   }
-  
+
+  .dataGrid {
+    margin-top: 20px;
+    padding: 0 15px;
+   
+    .category {
+      .wordStyle {
+        text-align: center;
+        .point {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        
+      }
+      
+    }
+  }
+  .progress {
+    padding: 0 15px;
+  }
+}
+.word {
+  @include font-style(16px);
+}
+.count {
+  @include font-style(34px);
+  text-align: center;
+}

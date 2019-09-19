@@ -1,0 +1,27 @@
+#deviceRun {
+  background: #fff;
+  border-radius: 2px;
+  padding: 20px;
+  height: 320px;
+  overflow: hidden;
+  .title {
+    @include font-style(18px);
+    font-weight: 600;
+  }
+  .deviceCategory {
+      padding: 0 21px;
+    .deviceTotal {
+        padding: 16px;
+        border-radius: 6px;
+        margin-top: 60px;
+        border: 1px solid rgba(242, 242, 242, 1);
+        .deviceTotalWord {
+            @include font-style(14px,#9b9b9b);
+        }
+        .deviceTotalNum {
+            @include font-style(34px);
+        }
+      }
+  }
+  
+}
