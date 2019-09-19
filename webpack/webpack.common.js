@@ -10,6 +10,7 @@ const Webpack = require('webpack');
 const path = require('path');
 
 const Config = {
+    stats: "errors-only",
     entry: {
         "vue": ["vue/dist/vue.esm.js"],
         "vue_router": ["vue-router"],

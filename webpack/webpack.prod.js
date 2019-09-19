@@ -14,6 +14,7 @@ const DllConfig = require('./config/dll.config.js');
 const Config = {
     mode: 'production',
     devtool: 'cheap-module-source-map',
+    stats: "errors-only",
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
@@ -89,7 +90,6 @@ const Config = {
             new TerserJSPlugin({}),
         ]
     },
-    stats: "errors-only",
 }
 
 module.exports = merge(Config, DllConfig)
