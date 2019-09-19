@@ -17,6 +17,7 @@ const Config = {
         "lodash": ["lodash"],
         "moment": ["moment"],
         "axios": ["axios"],
+        "echarts": ["echarts"],
     },
     output: {
         filename: "[name].env.dll.js",
