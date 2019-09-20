@@ -2,7 +2,7 @@
     background: $color;
 }
 
-@mixin font-style($font: 18px,$color:#4A4A4A) {
+@mixin font-style($font: 18px,$color:$fontColor) {
     font-size: $font;
     font-family: PingFangSC;
     font-weight: 500;
