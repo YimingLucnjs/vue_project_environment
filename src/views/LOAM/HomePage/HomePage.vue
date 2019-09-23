@@ -30,6 +30,7 @@ import syntheticData from "../components/syntheticData/syntheticData";
 import disposeRate from "../components/disposeRate/disposeRate";
 // 企业分布
 import entpriseDistribute from "../components/entpriseDistribute/entpriseDistribute";
+// 设备运行
 import deviceRun from "../components/deivceRun/deviceRun";
 export default {
     components: {

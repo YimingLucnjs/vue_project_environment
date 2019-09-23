@@ -69,9 +69,7 @@ export default {
                 }
             })
         }
-        pieChart.series[0].name = '综合指数';
-        pieChart.series[0].data = chartSeries.sort((a, b) => a.value - b.value)
-        this.option = pieChart
+        this.option = pieChart({name:'综合指数',data:chartSeries.sort((a, b) => a.value - b.value)})
     }
 }
 </script>

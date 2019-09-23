@@ -9,7 +9,9 @@
             </div>
         </el-col>
         <el-col :span="6" v-for="(item,i) in enterpriseList" :key="i">
-            <ls-echarts :id="'deviceEchart'+i" style="height:140px;" :options="option[i]"></ls-echarts>
+            <ls-echarts :id="'deviceEchart'+i" style="height:140px;" :options="options[i]"></ls-echarts>
+            <div :class="className.name">{{item.name}}</div>
+            <div :class="className.count">{{item.percent}}% <i :class="item.status?'el-icon-caret-top '+className.caretTop:'el-icon-caret-bottom '+className.caretBottom"></i></div>
         </el-col>
     </el-row>
 
@@ -29,28 +31,35 @@ export default {
     data() {
         return {
             className: dataClass,
-            option: [],
+            options: [],
             enterpriseList: [ // 默认数据
                 {
                     name: '达标率',
                     count: '89',
-                    color: '#FDB82A'
+                    color: '#FDB82A',
+                    percent: '12',
+                    status: 1
                 },
                 {
                     name: '在线率',
                     count: '92',
-                    color: '#50E3C2'
+                    color: '#50E3C2',
+                    percent: '12',
+                    status: 0
                 },
                 {
                     name: '联动比',
                     count: '90',
-                    color: '#50D2FE'
+                    color: '#50D2FE',
+                    percent: '12',
+                    status: 0
                 }
             ]
         }
     },
     mounted() {
         this.enterpriseList.forEach((item, index) => {
+            
             let data = [{
                     value: item.count,
                     name: item.name,
@@ -65,7 +74,7 @@ export default {
                         fontSize: 30
                     }
                 },
-                {
+                {  // 圆环空白地方
                     value: (100 - item.count),
                     name: item.name,
                     itemStyle: {
@@ -73,12 +82,9 @@ export default {
                     }
                 }
             ]
-            circlet.series[0].data = data;
-            this.option.push(circlet);
+            let option = circlet({data})
+            this.options.push(option);
         })
-        console.log('====',this.enterpriseList, this.option)
-        // this.option = circlet
-
     }
 }
 </script>

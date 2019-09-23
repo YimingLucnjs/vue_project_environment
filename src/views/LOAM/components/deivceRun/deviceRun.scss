@@ -9,19 +9,37 @@
     font-weight: 600;
   }
   .deviceCategory {
-      padding: 0 21px;
+    text-align: center;
+    padding: 0 21px;
     .deviceTotal {
-        padding: 16px;
-        border-radius: 6px;
-        margin-top: 60px;
-        border: 1px solid rgba(242, 242, 242, 1);
-        .deviceTotalWord {
-            @include font-style(14px,#9b9b9b);
-        }
-        .deviceTotalNum {
-            @include font-style(34px);
-        }
+      padding: 16px;
+      border-radius: 6px;
+      margin-top: 60px;
+      border: 1px solid rgba(242, 242, 242, 1);
+      .deviceTotalWord {
+        @include font-style(14px, #9b9b9b);
       }
+      .deviceTotalNum {
+        @include font-style(34px);
+      }
+    }
+    .name {
+      @include font-style(16px);
+      margin: 20px 0;
+      font-weight: 400;
+    }
+    .count {
+      @include font-style(12px,#4a4a4a);
+      font-weight: 400;
+      .caretTop {
+        font-size: 10px;
+        color: rgba(208, 2, 27, 1);
+      }
+      .caretBottom {
+        font-size: 10px;
+        color: rgba(126, 211, 33, 1);
+      }
+    }
+    
   }
-  
 }

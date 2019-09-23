@@ -17,7 +17,7 @@
                 </el-row>
                 <div :class="className.rank">
                     <div :class="className.rankTitle">企业分布数量排名前3</div>
-                    <div v-for="(item,i) in fistEnterprise" :key="i" :class="[className.rankSerial,'clearfix']">
+                    <div v-for="(item,i) in firstEnterprise" :key="i" :class="[className.rankSerial,'clearfix']">
                         <div :class="className.serialNum">{{i+1}}</div>
                         <div :class="className.serialWord">{{item.name}}</div>
                         <div style="float:right">{{item.count}}</div>
@@ -58,7 +58,7 @@ export default {
                     color: '#FFC928'
                 }
             ],
-            fistEnterprise: [
+            firstEnterprise: [
                 {
                     name: '某某区',
                     count: '30'
@@ -75,7 +75,12 @@ export default {
         }
     },
     mounted() {
-        this.option = overlapBar
+        let xData = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+        let seriesData = [
+            {name: '停产企业',data: [120, 132, 101, 134, 90, 230, 210]},
+            {name: '在排企业',data: [220, 182, 191, 234, 290, 330, 310]}
+        ]
+        this.option = overlapBar({seriesData,xData})
     }
 }
 </script>
