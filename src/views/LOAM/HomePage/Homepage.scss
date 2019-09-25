@@ -1,0 +1,30 @@
+.tableStyle {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+}
+
+.iconNormal {
+    color: $colorNormal;
+    font-size: 24px;
+}
+.iconTrouble {
+    color: $colorTrouble;
+    font-size: 20px;
+}
+.iconError {
+    color: $colorError;
+    font-size: 20px;
+}
+.statusError {
+    color: $colorError;
+}
+.iconOffline {
+    color: $colorOffline;
+    font-size: 20px;
+}
+.iconCheck {
+    color: $fontColor;
+    font-size: 20px;
+    font-weight: 600;
+}
